@@ -1,0 +1,11 @@
+[
+{
+  "model": "potions.potion",
+  "pk": 2,
+  "fields": {
+    "name": "Sleep Draught",
+    "owner": "admin",
+    "image": "img.jpeg"
+  }
+}
+]
