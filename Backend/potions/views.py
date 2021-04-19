@@ -2,11 +2,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response 
 from rest_framework import status 
 from rest_framework.exceptions import NotFound
-
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Potion 
 from .serializers.common import PotionSerializer
 
 class PotionListView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def get(self, _request):
         potions = Potion.objects.all()
@@ -21,6 +22,7 @@ class PotionListView(APIView):
         return Response(potion_to_add.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 class PotionDetailView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def get_potion(self, pk):
         try:
