@@ -4,6 +4,7 @@ class Potion(models.Model):
     name = models.CharField(max_length=50)
     owner = models.CharField(max_length=50, default='admin')
     image = models.CharField(max_length=300)
+    ingredients = models.ManyToManyField('ingredients.Ingredient', related_name="potions")
 
     def __str__(self):
         return f"{self.name} - {self.owner}"
