@@ -19,5 +19,7 @@ from django.urls import path, include
 urlpatterns = [
     path('api/potions/', include('potions.urls')),
     path('api/auth/', include('jwt_auth.urls')),
-    path('api/ingredients/', include('ingredients.urls'))
+    path('api/ingredients/', include('ingredients.urls')),
+    path('api/instructions/', include('instructions.urls'))
+
 ]

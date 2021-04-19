@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'potions',
     'jwt_auth',
     'ingredients',
+    'instructions',
 ]
 
 MIDDLEWARE = [
