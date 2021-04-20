@@ -15,7 +15,8 @@ const Navbar = () => {
   return (
     <nav className="navbar is-dark">
         <div className="navbar-start">
-          <Link to="/" className="navbar-item">Lab</Link>
+          <Link to="/lab" className="navbar-item">Lab</Link>
+          <Link to="/potions" className="navbar-item">Potions</Link>
 
           { userIsAuthenticated() &&
             <Link to="/profile" className="navbar-item">Profile</Link>

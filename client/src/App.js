@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Navbar from './components/NavBar'
 import Lab from './components/Lab'
+import PotionIndex from './components/PotionIndex'
 import Login from './auth/login'
 import Register from './auth/register'
 
@@ -16,14 +17,17 @@ const App = () => {
       <BrowserRouter>
         <Navbar />
         <Switch>
-          <Route exact path="/login">
+          <Route path="/login">
             <Login />
           </Route>
-          <Route exact path="/register">
+          <Route path="/register">
             <Register />
           </Route>
-          <Route path="/">
+          <Route path="/lab">
             <Lab />
+          </Route>
+          <Route path="/potions">
+            <PotionIndex />
           </Route>
         </Switch>
         {/* <Footer /> */}
