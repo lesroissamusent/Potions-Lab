@@ -14,31 +14,31 @@ const Navbar = () => {
   }
   return (
     <nav className="navbar is-dark">
-        <div className="navbar-start">
-          <Link to="/lab" className="navbar-item">Lab</Link>
-          <Link to="/potions" className="navbar-item">Potions</Link>
+      <div className="navbar-start">
+        <Link to="/lab" className="navbar-item">Lab</Link>
+        <Link to="/potions" className="navbar-item">Potions</Link>
 
-          { userIsAuthenticated() &&
-            <Link to="/profile" className="navbar-item">Profile</Link>
-          }
+        { userIsAuthenticated() &&
+          <Link to="/profile" className="navbar-item">Profile</Link>
+        }
 
-        </div>
-        <div className="navbar-end">
-          { !userIsAuthenticated() &&
-            <>
-              <Link to="/register" className="navbar-item">
-                Register
-              </Link>
+      </div>
+      <div className="navbar-end">
+        { !userIsAuthenticated() &&
+          <>
+            <Link to="/register" className="navbar-item">
+              Register
+            </Link>
 
-              <Link to="/login" className="navbar-item">
-                Log in
-              </Link>
-            </>
-          }
-          { userIsAuthenticated() &&
-            <button onClick={handleLogout} className="button is-dark">Log out</button>
-          }
-        </div>
+            <Link to="/login" className="navbar-item">
+              Log in
+            </Link>
+          </>
+        }
+        { userIsAuthenticated() &&
+          <button onClick={handleLogout} className="button is-dark">Log out</button>
+        }
+      </div>
     </nav>
   )
 }

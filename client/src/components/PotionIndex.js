@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
@@ -8,7 +10,7 @@ const PotionIndex = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get('/api/potions/')
+      const response = await axios.get('http://localhost:8000/api/potions')
       setPotions(response.data)
       console.log('RESPONSE', response)
     }
