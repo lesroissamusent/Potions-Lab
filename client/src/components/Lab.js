@@ -11,7 +11,7 @@ const App = () => {
   }, [])
 
 
-  return <h1>Hello Potions World</h1>
+  return <h1>Potions Lab</h1>
 }
 
 export default App
