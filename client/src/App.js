@@ -1,17 +1,25 @@
-import React, { useEffect } from 'react'
+
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+import Navbar from './components/NavBar'
+import Lab from './components/Lab'
+
 
 const App = () => {
-
-  useEffect(() => {
-    const getData = async () => {
-      const res = await fetch('/api/potions')
-      console.log(await res.json())
-    }
-    getData()
-  }, [])
-
-
-  return <h1>Hello Potions World</h1>
+  return (
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Lab />
+          </Route>
+        </Switch>
+        {/* <Footer /> */}
+      </BrowserRouter>
+    </>
+  )
 }
 
 export default App
