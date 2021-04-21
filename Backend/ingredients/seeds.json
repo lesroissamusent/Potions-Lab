@@ -1,0 +1,10 @@
+[
+{
+  "model": "ingredients.ingredient",
+  "pk": 1,
+  "fields": {
+    "name": "Lacewing Flies",
+    "uses": "binding together of two identities"
+  }
+}
+]

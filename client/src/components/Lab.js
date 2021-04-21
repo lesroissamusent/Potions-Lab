@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 const App = () => {
   useEffect(() => {
     const getData = async () => {
-      const res = await fetch('http://localhost:8000/api/potions')
+      const res = await fetch('/api/potions/')
       console.log('console log!!', await res.json())
     }
     getData()

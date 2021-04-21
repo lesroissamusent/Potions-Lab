@@ -33,7 +33,7 @@ const Login = () => {
       // loginPopUp(true)
       window.localStorage.setItem('token',response.data.token)
       console.log('🐝 ~ file: Login.js ~ line 26 ~ response', response)
-      history.push('/doodle-new') 
+      history.push('/potions') 
     } catch (err) {
       console.log('🐝 ~ file: Login.js ~ line 33 ~ err', err.response)
       setWasLoginSuccess(false)

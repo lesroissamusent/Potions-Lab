@@ -1,0 +1,23 @@
+[
+{
+  "model": "instructions.instruction",
+  "pk": 1,
+  "fields": {
+    "description": "stir counterclockwise 17 times"
+  }
+},
+{
+  "model": "instructions.instruction",
+  "pk": 2,
+  "fields": {
+    "description": "leave to brew for two days"
+  }
+},
+{
+  "model": "instructions.instruction",
+  "pk": 3,
+  "fields": {
+    "description": "stir clockwise 8 times"
+  }
+}
+]

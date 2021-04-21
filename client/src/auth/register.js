@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import '../styles/main.scss'
-
-
 const Register = () => {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
     password: '',
     password_confirmation: '',
+    first_name: 'user',
+    last_name: 'user',
+    profile_image: 'iamge.jpg',
   })
   const [errors, setErrors] = useState({
     username: '',
@@ -17,7 +18,6 @@ const Register = () => {
     password_confirmation: '',
   })
   console.log(errors, setErrors)
-
   const handleChange = event => {
     const newFormData = { ...formData, [event.target.name]: event.target.value }
     console.log('newFormData', newFormData)
@@ -30,11 +30,11 @@ const Register = () => {
       console.log(response)
     } catch (err) {
       console.log(err.response)
-      setErrors(err.response.data.errors)
+      setErrors(err.response.data)
     }
   }
-
   // if ( !errors ) return null
+  console.log('ERRORS', errors)
   return (
     <section className="section">
       <div className="container">
@@ -44,7 +44,7 @@ const Register = () => {
               <label className="label">Username</label>
               <div className="control">
                 <input
-                  className={`input ${errors.username ? 'is-danger' : ''}`}
+                  className={`input ${errors && errors.username ? 'is-danger' : ''}`}
                   placeholder="Username"
                   name="username"
                   value={formData.username}
@@ -103,5 +103,4 @@ const Register = () => {
     </section>
   )
 }
-
 export default Register
