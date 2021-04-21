@@ -4,14 +4,14 @@ from rest_framework import status
 from rest_framework.exceptions import NotFound
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Instruction 
-from .serializers.common import InstructionSerializer
+from .serializers.populated import PopulatedInstructionSerializer
 
 class InstructionListView(APIView):
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def get(self, _request):
         instructions = Instruction.objects.all()
-        serialized_instructions = InstructionSerializer(instructions, many=True) 
+        serialized_instructions = PopulatedInstructionSerializer(instructions, many=True) 
         return Response(serialized_instructions.data, status=status.HTTP_200_OK)
         
     def post(self, request):

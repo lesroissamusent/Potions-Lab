@@ -5,13 +5,15 @@ from rest_framework.exceptions import NotFound
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Potion 
 from .serializers.common import PotionSerializer
+from .serializers.populated import PopulatedPotionSerializer
+
 
 class PotionListView(APIView):
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def get(self, _request):
         potions = Potion.objects.all()
-        serialized_potions = PotionSerializer(potions, many=True) 
+        serialized_potions = PopulatedPotionSerializer(potions, many=True) 
         return Response(serialized_potions.data, status=status.HTTP_200_OK)
         
     def post(self, request):

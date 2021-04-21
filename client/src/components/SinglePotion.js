@@ -27,8 +27,8 @@ const SinglePotion = ({ id, name, image, ingredients, instructions }) => {
             {/* <div className="columns is-multiline">
               { ingredients.map((ingredient, i) => {
                 return <h5 key={i}>{ ingredient }</h5>
-              })}
-            </div> */}
+              })} */}
+            {/* </div> */}
             <h5>{instructions}</h5>
           </div>
         </div>

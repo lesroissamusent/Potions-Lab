@@ -9,7 +9,7 @@ import { useHistory } from 'react-router-dom'
 const Login = () => {
   const history = useHistory()
   const [formData, setFormData] = useState({
-    usernameOrEmail: '',
+    email: '',
     password: '',
   })
 
@@ -27,7 +27,7 @@ const Login = () => {
     event.preventDefault()
     // if()
     try {
-      const response = await axios.post('/api/auth/login', formData)
+      const response = await axios.post('/api/auth/login/', formData)
       console.log('🐝 ~ file: Login.js ~ line 26 ~ response', response.data.message)
       setWasLoginSuccess(true)
       // loginPopUp(true)
@@ -50,14 +50,14 @@ const Login = () => {
       <br />
       <form onSubmit={handleSubmit}className="box column is-half is-offset-one-quarter">
         <div className="field">
-          <label className="label">Username or Email</label>
+          <label className="label">Email</label>
           <div className="control">
             <input
               className="input"
-              placeholder="Username or email"
-              name="usernameOrEmail"
+              placeholder="email"
+              name="email"
               onChange={handleChange}
-              value={formData.usernameOrEmail}
+              value={formData.email}
             />
           </div>
         </div>

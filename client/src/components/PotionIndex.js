@@ -20,7 +20,7 @@ const PotionIndex = () => {
   
 
   if ( !potions ) return null
-
+  console.log('potions', potions)
   console.log('name', potions[0].name)
   console.log('id', potions[0].id)
   console.log('ingredients', potions[0].ingredients)
@@ -32,7 +32,7 @@ const PotionIndex = () => {
         { 
           potions &&
             <div className="columns is-multiline">
-              { potions.map( (potion, i) => (
+              { potions.map((potion, i) => (
                 <SinglePotion key={i} {...potion} />
               ))
               }

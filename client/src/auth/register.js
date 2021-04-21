@@ -8,24 +8,25 @@ const Register = () => {
     username: '',
     email: '',
     password: '',
-    passwordConfirmation: '',
+    password_confirmation: '',
   })
   const [errors, setErrors] = useState({
     username: '',
     email: '',
     password: '',
-    passwordConfirmation: '',
+    password_confirmation: '',
   })
   console.log(errors, setErrors)
 
   const handleChange = event => {
     const newFormData = { ...formData, [event.target.name]: event.target.value }
+    console.log('newFormData', newFormData)
     setFormData(newFormData)
   }
   const handleSubmit = async event => {
     event.preventDefault()
     try {
-      const response = await axios.post('/api/auth/login')
+      const response = await axios.post('/api/auth/register/', formData)
       console.log(response)
     } catch (err) {
       console.log(err.response)
@@ -83,15 +84,15 @@ const Register = () => {
               <label className="label">Password Confirmation</label>
               <div className="control">
                 <input
-                  className={`input ${errors.passwordConfirmation ? 'is-danger' : ''}`}
+                  className={`input ${errors.password_confirmation ? 'is-danger' : ''}`}
                   type="password"
                   placeholder="Password Confirmation"
-                  name="passwordConfirmation"
-                  value={formData.passwordConfirmation}
+                  name="password_confirmation"
+                  value={formData.password_confirmation}
                   onChange={handleChange}
                 />
               </div>
-              { errors.passwordConfirmation && <p className="help is-danger">{errors.passwordConfirmation}</p> }
+              { errors.password_confirmation && <p className="help is-danger">{errors.password_confirmation}</p> }
             </div>
             <div className="field">
               <button type="submit" className="button is-fullwidth is-warning">Register</button>
