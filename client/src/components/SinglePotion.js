@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const SinglePotion = ({ _id, name, image, uses }) => {
+const SinglePotion = ({ id, name, image, ingredients }) => {
   return (
     <div className="column is-one-quarter-desktop is-one-third-tablet">
-      <Link to={`/potions/${_id}`}>
+      <Link to={`/potions/${id}`}>
         <div className="card">›
           <div className="card-header">
             <div className="card-header-title">{name}</div>
@@ -15,7 +15,7 @@ const SinglePotion = ({ _id, name, image, uses }) => {
             </figure>
           </div>
           <div className="card-content">
-            <h5>{uses}</h5>
+            <h5>{ingredients}</h5>
           </div>
         </div>
       </Link>

@@ -12,26 +12,23 @@ const PotionIndex = () => {
     const getData = async () => {
       const response = await axios.get('http://localhost:8000/api/potions')
       setPotions(response.data)
-      console.log('RESPONSE', response)
+      console.log('RESPONSE.DATA', response.data)
     }
     getData()
   }, [])
 
   return (
-    <>
-      <h1>test</h1>
-      <div className="section">
-        <div className="container">
-          { potions &&
-            <div className="columns is-multiline">
-              { potions.map( potion => (
-                <SinglePotion key={potions._id} {...potions} />
-              ))}
-            </div>
-          }
-        </div>
+    <div className="section">
+      <div className="container">
+        { potions &&
+          <div className="columns is-multiline">
+            { potions.map( potion => (
+              <SinglePotion key={potions.id} {...potions} />
+            ))}
+          </div>
+        }
       </div>
-    </>
+    </div>
   )
 }
 

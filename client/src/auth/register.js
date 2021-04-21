@@ -33,6 +33,7 @@ const Register = () => {
     }
   }
 
+  if ( !errors ) return null
   return (
     <section className="section">
       <div className="container">
