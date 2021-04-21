@@ -1,9 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const SinglePotion = ({ id, name, image, ingredients }) => {
+const SinglePotion = ({ id, name, image, ingredients, instructions }) => {
+  // console.log('name', { name })
+  // console.log('id', { id })
+  console.log('ingredients', { ingredients })
+  // console.log('instructions', { instructions })
+
+
+  
   return (
-    <div className="column is-one-quarter-desktop is-one-third-tablet">
+    <div key={id} className="column is-one-quarter-desktop is-one-third-tablet">
+      {name}
       <Link to={`/potions/${id}`}>
         <div className="card">›
           <div className="card-header">
@@ -16,6 +24,12 @@ const SinglePotion = ({ id, name, image, ingredients }) => {
           </div>
           <div className="card-content">
             <h5>{ingredients}</h5>
+            {/* <div className="columns is-multiline">
+              { ingredients.map((ingredient, i) => {
+                return <h5 key={i}>{ ingredient }</h5>
+              })}
+            </div> */}
+            <h5>{instructions}</h5>
           </div>
         </div>
       </Link>

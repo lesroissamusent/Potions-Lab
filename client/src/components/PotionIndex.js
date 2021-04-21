@@ -10,22 +10,33 @@ const PotionIndex = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get('http://localhost:8000/api/potions')
+      const response = await axios.get('/api/potions')
       setPotions(response.data)
       console.log('RESPONSE.DATA', response.data)
     }
     getData()
   }, [])
 
+  
+
+  if ( !potions ) return null
+
+  console.log('name', potions[0].name)
+  console.log('id', potions[0].id)
+  console.log('ingredients', potions[0].ingredients)
+  console.log('instructions', potions[0].instructions)
+
   return (
     <div className="section">
       <div className="container">
-        { potions &&
-          <div className="columns is-multiline">
-            { potions.map( potion => (
-              <SinglePotion key={potions.id} {...potions} />
-            ))}
-          </div>
+        { 
+          potions &&
+            <div className="columns is-multiline">
+              { potions.map( (potion, i) => (
+                <SinglePotion key={i} {...potion} />
+              ))
+              }
+            </div>
         }
       </div>
     </div>

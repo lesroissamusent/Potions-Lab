@@ -27,7 +27,7 @@ const Login = () => {
     event.preventDefault()
     // if()
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/login', formData)
+      const response = await axios.post('/api/auth/login', formData)
       console.log('🐝 ~ file: Login.js ~ line 26 ~ response', response.data.message)
       setWasLoginSuccess(true)
       // loginPopUp(true)

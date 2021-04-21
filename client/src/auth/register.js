@@ -25,7 +25,7 @@ const Register = () => {
   const handleSubmit = async event => {
     event.preventDefault()
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/login', formData)
+      const response = await axios.post('/api/auth/login')
       console.log(response)
     } catch (err) {
       console.log(err.response)
@@ -33,7 +33,7 @@ const Register = () => {
     }
   }
 
-  if ( !errors ) return null
+  // if ( !errors ) return null
   return (
     <section className="section">
       <div className="container">
