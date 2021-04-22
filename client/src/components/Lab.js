@@ -1,4 +1,8 @@
 import React, { useEffect } from 'react'
+import '../styles/lab.scss'
+import '../styles/main.scss'
+
+
 
 const App = () => {
   useEffect(() => {
@@ -10,7 +14,13 @@ const App = () => {
   }, [])
 
 
-  return <h1>Hello World</h1>
+  return (
+    <div className="corridor">
+      <h5>Welcome to the store.</h5>
+    </div>
+  )
+
+
 }
 
 export default App

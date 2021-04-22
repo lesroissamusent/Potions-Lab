@@ -1,0 +1,42 @@
+@import "~bulma/bulma.sass";
+$brand-color: #33A58B;
+
+
+div.columns {
+  margin-top: 100px
+}
+
+button.button.is-fullwidth.login {
+  margin-bottom: 0px;
+}
+
+form.column.is-half.is-offset-one-quarter.box {
+  width: 40%;
+  margin: 0 30%;
+  background-color: black;
+  color: white;
+}
+
+label.label {
+    color: white;
+
+
+}
+
+input.input {
+  background-color: #1A4289;
+  border-color: $brand-color;
+  color: white;
+
+}
+
+div.control {
+    color: white;
+}
+
+button.button {
+  background-color: $brand-color;
+  border-color: #1A4289;
+}
+
+

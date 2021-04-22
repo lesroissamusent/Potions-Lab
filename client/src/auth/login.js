@@ -2,6 +2,9 @@ import '../styles/main.scss'
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
+import '../styles/login.scss'
+import '../styles/main.scss'
+import seal from '../assets/hogwarts-seal.png'
 
 // import { loginPopUp } from '../../helpers/popUps.js' //* handles the pop-up
 
@@ -42,13 +45,14 @@ const Login = () => {
   }
 
   return (
-    <div className="main has-text-centered">
+    <div className="columns has-text-centered">
       {/* <section className="section"> */}
       {/* <div className="container"> */}
       {/* <div className="columns"> */}
-      <p className="subtitle is-4">Login 🎨</p>
-      <br />
-      <form onSubmit={handleSubmit}className="box column is-half is-offset-one-quarter">
+      <form onSubmit={handleSubmit}className="column is-half is-offset-one-quarter box">
+        <div className="seal">
+          <img src={ seal }/>
+        </div>
         <div className="field">
           <label className="label">Email</label>
           <div className="control">
@@ -74,13 +78,11 @@ const Login = () => {
             />
           </div>
         </div>
-        <div className="field-button">
-          <button className="button box is-fullwidth hover-box">Login</button><br />
+        <div>
+          <button className="button is-fullwidth login">Login</button><br />
         </div>
       </form>
-      {/* </div> */}
-      {/* </div> */}
-      {/* </section> */}
+      
     </div>
   )
 }

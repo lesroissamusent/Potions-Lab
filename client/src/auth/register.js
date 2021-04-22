@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import '../styles/register.scss'
 import '../styles/main.scss'
+import seal from '../assets/hogwarts-seal.png'
+
+
 const Register = () => {
   const [formData, setFormData] = useState({
     username: '',
@@ -36,10 +40,13 @@ const Register = () => {
   // if ( !errors ) return null
   console.log('ERRORS', errors)
   return (
-    <section className="section">
+    <section className="main has-text-centered">
       <div className="container">
         <div className="columns">
           <form className="column is-half is-offset-one-quarter box" onSubmit={handleSubmit}>
+            <div className="seal">
+              <img src={ seal } />
+            </div>
             <div className="field">
               <label className="label">Username</label>
               <div className="control">
@@ -95,7 +102,7 @@ const Register = () => {
               { errors.password_confirmation && <p className="help is-danger">{errors.password_confirmation}</p> }
             </div>
             <div className="field">
-              <button type="submit" className="button is-fullwidth is-warning">Register</button>
+              <button type="submit" className="button is-fullwidth">Register</button>
             </div>
           </form>
         </div>

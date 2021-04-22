@@ -1,0 +1,20 @@
+@import "~bulma/bulma.sass";
+
+$brand-color: #33A58B;
+
+.corridor {
+  // background: white;
+  min-height: 100vh;
+  background-image: url("../assets/dark-window.jpg");    
+  background-size: 800px;
+  background-repeat: no-repeat; 
+  background-position-y: center;
+  background-position-x: center;
+  background-attachment: fixed;
+  margin-top: 30px;
+}
+    
+
+
+
+//background-image: url("../assets/dark-window.jpg");

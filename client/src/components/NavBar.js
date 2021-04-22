@@ -13,7 +13,7 @@ const Navbar = () => {
     history.push('/')
   }
   return (
-    <nav className="navbar is-dark">
+    <nav className="navbar">
       <div className="navbar-start">
         <Link to="/lab" className="navbar-item">Lab</Link>
         <Link to="/potions" className="navbar-item">Potions</Link>

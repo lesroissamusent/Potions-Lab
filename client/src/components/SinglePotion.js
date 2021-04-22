@@ -2,16 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const SinglePotion = ({ id, name, image, ingredients, instructions }) => {
-  // console.log('name', { name })
-  // console.log('id', { id })
-  console.log('ingredients', { ingredients })
-  // console.log('instructions', { instructions })
+  console.log('ingredients', ingredients)
+  console.log('instructions', instructions)
 
-
-  
   return (
     <div key={id} className="column is-one-quarter-desktop is-one-third-tablet">
-      {name}
       <Link to={`/potions/${id}`}>
         <div className="card">›
           <div className="card-header">
@@ -23,18 +18,20 @@ const SinglePotion = ({ id, name, image, ingredients, instructions }) => {
             </figure>
           </div>
           <div className="card-content">
-            <h5>{ingredients}</h5>
-            {/* <div className="columns is-multiline">
+            <div className="columns is-multiline">
               { ingredients.map((ingredient, i) => {
-                return <h5 key={i}>{ ingredient }</h5>
-              })} */}
-            {/* </div> */}
-            <h5>{instructions}</h5>
+                return <h5 key={i}>{ingredient.name}</h5>
+              })} 
+            </div>
+            <div className="columns is-multiline">
+              { instructions.map((instruction, i) => {
+                return <h5 key={i}>{instruction.description}</h5>
+              })} 
+            </div>
           </div>
         </div>
       </Link>
     </div>
   )
 }
-
 export default SinglePotion

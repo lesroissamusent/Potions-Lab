@@ -1,0 +1,25 @@
+@import "~bulma/bulma.sass";
+
+
+  div.columns {
+    margin-top: 100px
+  }
+  form.column.is-half.is-offset-one-quarter.box {
+    width: 40%;
+    margin: 0 30%;
+    background-color: black;
+    color: white;
+  }
+
+  button.button.is-fullwidth {
+  margin-bottom: 20px;
+  color: white;
+  font-weight: 600;
+  }
+
+  div.seal {
+  background-color: black;
+  width: 120px;
+  }
+
+
