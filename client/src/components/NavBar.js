@@ -15,7 +15,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-start">
-        <Link to="/lab" className="navbar-item">Lab</Link>
+        <Link to="/lab" className="navbar-item">
+          <image src="(../../public/assets/android-chrome-512x512.png)" className="lab-icon"/>
+        </Link>
         <Link to="/potions" className="navbar-item">Potions</Link>
 
         { userIsAuthenticated() &&

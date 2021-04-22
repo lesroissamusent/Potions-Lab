@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import SinglePotion from './SinglePotion'
+import '../styles/login.scss'
+import '../styles/potions.scss'
 
 
 
@@ -24,19 +26,22 @@ const PotionIndex = () => {
   console.log('img', potions[0].image)
 
   return (
-    <div className="section">
-      <div className="container">
-        { 
-          potions &&
-            <div className="columns is-multiline">
-              { potions.map((potion, i) => (
-                <SinglePotion key={i} {...potion} />
-              ))
-              }
-            </div>
-        }
+    <>
+      <h1 className="potions-page-title">Potions</h1>
+      <div className="section">
+        <div className="container">
+          { 
+            potions &&
+              <div className="columns is-multiline">
+                { potions.map((potion, i) => (
+                  <SinglePotion key={i} {...potion} />
+                ))
+                }
+              </div>
+          }
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 export default PotionIndex

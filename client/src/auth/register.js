@@ -13,7 +13,7 @@ const Register = () => {
     password_confirmation: '',
     first_name: 'user',
     last_name: 'user',
-    profile_image: 'iamge.jpg',
+    profile_image: 'image.jpg',
   })
   const [errors, setErrors] = useState({
     username: '',

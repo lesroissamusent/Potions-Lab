@@ -1,0 +1,24 @@
+@import "~bulma/bulma.sass";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=PT+Serif&family=Reenie+Beanie&display=swap');
+
+
+body {
+  background: black;
+  min-height: 300vh;
+  font-family: 'Cinzel Decorative', cursive;
+}
+.potions-page-title {
+  color: white;
+  font-family: 'Reenie Beanie', cursive;
+  text-align: center;
+  font-size: 100px;
+  max-height: 15vh;
+
+}
+.columns.is-multiline {
+  margin: 0;
+}
+
+.card-title {
+  font-weight: 600;
+}

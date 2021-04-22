@@ -30,6 +30,11 @@ input.input {
 
 }
 
+input.input::placeholder {
+  color: white;
+}
+
+
 div.control {
     color: white;
 }
