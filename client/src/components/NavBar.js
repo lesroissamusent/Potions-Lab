@@ -15,8 +15,8 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-start">
-        <Link to="/lab" className="navbar-item">
-          <image src="(../../public/assets/android-chrome-512x512.png)" className="lab-icon"/>
+        <Link to="/lab" className="logo-image">
+          <img src="../../assets/nav-logo.png" alt={`${name}`} />
         </Link>
         <Link to="/potions" className="navbar-item">Potions</Link>
 
@@ -38,7 +38,7 @@ const Navbar = () => {
           </>
         }
         { userIsAuthenticated() &&
-          <button onClick={handleLogout} className="button is-dark">Log out</button>
+          <h4 onClick={handleLogout} className="logout">Log-out</h4>
         }
       </div>
     </nav>

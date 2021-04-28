@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import '../styles/register.scss'
 import '../styles/main.scss'
-import seal from '../assets/hogwarts-seal.png'
+// import seal from '../assets/hogwarts-seal.png'
 
 
 const Register = () => {
@@ -45,7 +45,7 @@ const Register = () => {
         <div className="columns">
           <form className="column is-half is-offset-one-quarter box" onSubmit={handleSubmit}>
             <div className="seal">
-              <img src={ seal } />
+              {/* <img src={ seal } /> */}
             </div>
             <div className="field">
               <label className="label">Username</label>

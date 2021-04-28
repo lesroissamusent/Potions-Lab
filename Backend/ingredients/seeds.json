@@ -6,5 +6,325 @@
     "name": "Lacewing Flies",
     "uses": "binding together of two identities"
   }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 2,
+  "fields": {
+    "name": "Ashwinder egg",
+    "uses": "binding together of two identities"
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 3,
+  "fields": {
+    "name": "Abraxan hair",
+    "uses": "Has strengthening properties."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 4,
+  "fields": {
+    "name": "Bitter Root",
+    "uses": "Creates a healing or soothing balm."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 5,
+  "fields": {
+    "name": "Snowdrop",
+    "uses": "Known for its resilience."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 6,
+  "fields": {
+    "name": "Re’em blood",
+    "uses": "Gives the drinker immense strength for a short time."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 7,
+  "fields": {
+    "name": "Powdered Snake Fangs",
+    "uses": "Often used in antidotes."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 8,
+  "fields": {
+    "name": "Billywig stings",
+    "uses": "Has renewal and revival properties."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 9,
+  "fields": {
+    "name": "Wolfsbane",
+    "uses": "Toxic, helps to strengthen the mind."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 10,
+  "fields": {
+    "name": "Fanged Geranium",
+    "uses": "Good for bone strength."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 11,
+  "fields": {
+    "name": "Human Bone",
+    "uses": "A strong binding agent."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 12,
+  "fields": {
+    "name": "Rat Tails",
+    "uses": "Promotes balance"
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 13,
+  "fields": {
+    "name": "Porcupine Quills",
+    "uses": "Beneficial for hair growth."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 14,
+  "fields": {
+    "name": "Billywig Stings",
+    "uses": "Causes giddiness, and in some cases, levitation."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 15,
+  "fields": {
+    "name": "Dried Nettles",
+    "uses": "An ingredient often used in healing potions."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 16,
+  "fields": {
+    "name": "Pungous Onions",
+    "uses": "Soothes rashes and irritation."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 17,
+  "fields": {
+    "name": "Flobberworm Mucus",
+    "uses": "Thickens potions."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 18,
+  "fields": {
+    "name": "Shrivelfig",
+    "uses": "Has softening qualities."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 19,
+  "fields": {
+    "name": "Sopophorous beans",
+    "uses": "Induces sleep and lightens unpleasant memories."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 20,
+  "fields": {
+    "name": "Wormwood",
+    "uses": "Creates somnolence (a strong desire to sleep)."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 21,
+  "fields": {
+    "name": "Powdered Moonstone",
+    "uses": "Adds luminescence, not super useful but definitely very pretty."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 22,
+  "fields": {
+    "name": "Syrup of Hellebore",
+    "uses": "A gentle poison."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 23,
+  "fields": {
+    "name": "Unicorn Horn",
+    "uses": "Has properties of purification which are used to dissolve poisons."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 24,
+  "fields": {
+    "name": "Valerian Root",
+    "uses": "A mild sedative."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 25,
+  "fields": {
+    "name": "Rose Thorns",
+    "uses": "Promotes instability."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 26,
+  "fields": {
+    "name": "Peppermint",
+    "uses": "Often used in remedies due to its healing and cooling properties."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 27,
+  "fields": {
+    "name": "Pearl Dust",
+    "uses": "An expensive, fairly uncommon potion ingredient used in love potions."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 28,
+  "fields": {
+    "name": "Rose Petals",
+    "uses": "A stabilising agent."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 29,
+  "fields": {
+    "name": "Powdered Root of Asphodel",
+    "uses": "Once believed to be a cure for snake bites."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 30,
+  "fields": {
+    "name": "Infusion of Wormwood",
+    "uses": "Establishes absence."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 31,
+  "fields": {
+    "name": "Sloth Brain",
+    "uses": "Creates the illusion of slowed time."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 32,
+  "fields": {
+    "name": "Wiggentree bark",
+    "uses": "Provides protection from dark creatures."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 33,
+  "fields": {
+    "name": "Dittany",
+    "uses": "A powerful healing herb with restorative properties."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 34,
+  "fields": {
+    "name": "Horklump Juice",
+    "uses": "Has dual properties of healing and poisoning."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 35,
+  "fields": {
+    "name": "Chizpurfle Fangs",
+    "uses": "Used to unify potions."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 36,
+  "fields": {
+    "name": "Boom Berry",
+    "uses": "The juices have restorative qualities."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 37,
+  "fields": {
+    "name": "Leeches",
+    "uses": "Remove impurities."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 38,
+  "fields": {
+    "name": "Powdered Bicorn Horn",
+    "uses": "Promote the intertwining of elements."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 39,
+  "fields": {
+    "name": "Knotgrass",
+    "uses": "Has binding properties."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 40,
+  "fields": {
+    "name": "Fluxweed",
+    "uses": "Pacifies resistence to physical changes."
+  }
+},
+{
+  "model": "ingredients.ingredient",
+  "pk": 41,
+  "fields": {
+    "name": "Shredded Boomslang Skin",
+    "uses": "Promotes growth."
+  }
 }
 ]

@@ -5,13 +5,297 @@
   "fields": {
     "name": "Polyjuice Potion",
     "owner": 1,
-    "image": "imgs.jpeg",
+    "image": "polyjuice.png",
     "ingredients": [
-      1
+      1,
+      37,
+      38,
+      39,
+      40,
+      41
     ],
     "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 2,
+  "fields": {
+    "name": "Strong Exstimulo Potion",
+    "owner": 1,
+    "image": "../assets/Exstimulo.png",
+    "ingredients": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 3,
+  "fields": {
+    "name": "Wideye Potion",
+    "owner": 1,
+    "image": "../assets/Wideye.png",
+    "ingredients": [
+      7,
+      8,
+      9
+    ],
+    "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 4,
+  "fields": {
+    "name": "Strengthening Solution",
+    "owner": 1,
+    "image": "../assets/Strengthening.png",
+    "ingredients": [
+      7,
+      10,
+      11
+    ],
+    "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 5,
+  "fields": {
+    "name": "Hair-Raising Potion",
+    "owner": 1,
+    "image": "../assets/Hair-Raising.png",
+    "ingredients": [
+      3,
+      12,
+      13,
+      14,
+      35
+    ],
+    "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 6,
+  "fields": {
+    "name": "Cure for Boils",
+    "owner": 1,
+    "image": "../assets/Boils.png",
+    "ingredients": [
+      7,
+      13,
+      15,
+      16,
+      17
+    ],
+    "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 7,
+  "fields": {
+    "name": "Elixir to Induce Euphoria",
+    "owner": 1,
+    "image": "../assets/Euphoria.png",
+    "ingredients": [
+      13,
+      18,
+      19,
+      20
+    ],
+    "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 8,
+  "fields": {
+    "name": "Draught of Peace",
+    "owner": 1,
+    "image": "peace.png",
+    "ingredients": [
+      13,
+      21,
+      22,
+      23,
+      24
+    ],
+    "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 9,
+  "fields": {
+    "name": "Amortentia",
+    "owner": 1,
+    "image": "../assets/Amortentia.png",
+    "ingredients": [
+      2,
+      21,
+      25,
+      26,
+      27,
+      28
+    ],
+    "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 10,
+  "fields": {
+    "name": "Draught of Living Death",
+    "owner": 1,
+    "image": "../assets/Living-Death.png",
+    "ingredients": [
+      19,
+      24,
+      29,
+      30,
+      31
+    ],
+    "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 11,
+  "fields": {
+    "name": "Wiggenweld Potion",
+    "owner": 1,
+    "image": "../assets/Wiggenweld.png",
+    "ingredients": [
+      14,
+      17,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 12,
+  "fields": {
+    "name": "Puncher Potion",
+    "owner": 1,
+    "image": "../assets/Puncher.png",
+    "ingredients": [
       1,
-      2
+      34,
+      33,
+      9,
+      11
+    ],
+    "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 13,
+  "fields": {
+    "name": "Pepperup Potion",
+    "owner": 1,
+    "image": "../assets/Pepperup.png",
+    "ingredients": [
+      4,
+      5,
+      36,
+      12,
+      13
+    ],
+    "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 14,
+  "fields": {
+    "name": "Regerminating Potion",
+    "owner": 1,
+    "image": "../assets/Regerminating.png",
+    "ingredients": [
+      32,
+      2,
+      3,
+      15,
+      26
+    ],
+    "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 15,
+  "fields": {
+    "name": "Memory Potion",
+    "owner": 1,
+    "image": "../assets/Memory.png",
+    "ingredients": [
+      8,
+      17,
+      18
+    ],
+    "instructions": [
+      1
+    ]
+  }
+},
+{
+  "model": "potions.potion",
+  "pk": 16,
+  "fields": {
+    "name": "Garrotting Gas",
+    "owner": 1,
+    "image": "../assets/Garrotting.png",
+    "ingredients": [
+      10,
+      11,
+      12,
+      21,
+      22
+    ],
+    "instructions": [
+      1
     ]
   }
 }

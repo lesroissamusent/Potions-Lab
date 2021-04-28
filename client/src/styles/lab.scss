@@ -1,20 +1,60 @@
 @import "~bulma/bulma.sass";
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Reenie+Beanie&display=swap');
+
 
 $brand-color: #33A58B;
 
+// body {
+
+// }
+
 .corridor {
   // background: white;
-  min-height: 100vh;
+  min-height: 80vh;
   background-image: url("../assets/dark-window.jpg");    
   background-size: 800px;
   background-repeat: no-repeat; 
   background-position-y: center;
   background-position-x: center;
   background-attachment: fixed;
-  margin-top: 30px;
+  text-align: center;
+  // color: grey;
+  background-color: transparent;
+}
+
+h5.intro {
+    margin-top: 50px;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
 }
     
+button.button.lab {
+    color: white;
+    background-color: transparent;
+    margin-top: 50vh;
+    font-size: 40px;
+    padding: 10px 30px;
+    border-width: 0px;
+}
+
+.puff-out-ver {
+	-webkit-animation: puff-out-ver 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+	        animation: puff-out-ver 0.9s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+}
+
+a.enter-button {
+ color: white;
+ font-family: 'Cinzel Decorative', cursive !important;  
+ font-size: 50px;
+}
+a.enter-button:hover {
+  color: $brand-color !important;
+  background-color: transparent !important;
+  font-size: 70px;
+  transition-duration: 1s;
 
 
+}
 
 //background-image: url("../assets/dark-window.jpg");

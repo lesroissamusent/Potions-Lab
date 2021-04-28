@@ -5,7 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/NavBar'
 import Lab from './components/Lab'
 import PotionIndex from './components/PotionIndex'
-// import PotionShow from './components/PotionShow'
+import SinglePotionShow from './components/SinglePotionShow'
 import Login from './auth/login'
 import Register from './auth/register'
 
@@ -27,12 +27,12 @@ const App = () => {
           <Route path="/lab">
             <Lab />
           </Route>
-          <Route path="/potions">
+          <Route exact path="/potions">
             <PotionIndex />
           </Route>
-          {/* <Route path="/potions:id">
-            <PotionShow />
-          </Route> */}
+          <Route path="/potions/:id">
+            <SinglePotionShow />
+          </Route>
         </Switch>
         {/* <Footer /> */}
       </BrowserRouter>

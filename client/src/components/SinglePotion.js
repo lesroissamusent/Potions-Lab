@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const SinglePotion = ({ id, name, image, ingredients, instructions }) => {
-  console.log('ingredients', ingredients)
-  console.log('instructions', instructions)
+const SinglePotion = ({ id, name, image, ingredients }) => { 
+  // console.log('ingredients', ingredients)
 
   return (
     <div key={id} className="column is-one-quarter-desktop is-one-third-tablet">
@@ -19,16 +18,12 @@ const SinglePotion = ({ id, name, image, ingredients, instructions }) => {
           </div>
           <div className="card-content">
             <div className="columns is-multiline">
-              <h3 className="card-title">Ingredients:</h3>
+              <h3 className="card-title">Ingredients :</h3>
               { ingredients.map((ingredient, i) => {
-                return <h5 key={i}>{ingredient.name}</h5>
+                return <h5 key={i} className="tooltip">{ingredient.name}<span className="tooltiptext">{ingredient.uses}</span></h5>
               })} 
+              
             </div>
-            {/* <div className="columns is-multiline">
-              { instructions.map((instruction, i) => {
-                return <h5 key={i}>{instruction.description}</h5>
-              })} 
-            </div> */}
           </div>
         </div>
       </Link>
