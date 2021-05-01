@@ -8,8 +8,8 @@ import PotionIndex from './components/PotionIndex'
 import SinglePotionShow from './components/SinglePotionShow'
 import Login from './auth/login'
 import Register from './auth/register'
-
-
+// import ProfileForm from './components/ProfileForm'
+import PotionForm from './components/PotionForm'
 
 
 const App = () => {
@@ -32,6 +32,12 @@ const App = () => {
           </Route>
           <Route path="/potions/:id">
             <SinglePotionShow />
+          </Route>
+          {/* <Route path="/profileform">
+            <ProfileForm />
+          </Route> */}
+          <Route path="/makepotion">
+            <PotionForm />
           </Route>
         </Switch>
         {/* <Footer /> */}
