@@ -16,7 +16,7 @@ const PotionForm = () => {
   
   const [formData, setFormData] = useState({
     name: '',
-    image: 'img.jpeg',
+    image: '../assets/Memory.png',
     owner: userID,
     ingredients: [],
     instructions: [],
@@ -52,6 +52,8 @@ const PotionForm = () => {
   if (!instructions || !ingredients) return null 
   console.log('instructions', instructions)
   console.log('ingredients', ingredients)
+  console.log('form data', formData)
+
 
   const handleIngredientsSelect = (selected, name) => {
     const values = selected ? selected.map(item => item.value) : []
@@ -60,6 +62,11 @@ const PotionForm = () => {
   }
 
   const handleInstructionsSelect = (selected, name) => {
+    const values = selected ? selected.map(item => item.value) : []
+    setFormData({ ...formData, [name]: [...values] })
+  }
+
+  const handleImageSelect = (selected, name) => {
     const values = selected ? selected.map(item => item.value) : []
     setFormData({ ...formData, [name]: [...values] })
   }
@@ -79,6 +86,11 @@ const PotionForm = () => {
     return { value: id, label: description }
   })
 
+  const imageOptions = [
+    { value: 'hogwarts-seal.png', label: 'medicine' }, 
+    { value: 'strawberry', label: 'physical effect' }
+  ]
+
 
 
 
@@ -94,6 +106,18 @@ const PotionForm = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
+            />
+          </div>
+        </div>
+        <div className="field">
+          <label className="label">Image:</label>
+          <div className="control">
+            <Select
+              name="image"
+              defaultValue={imageOptions[0]}
+              options={imageOptions}
+              components={makeAnimated()}
+              onChange={handleImageSelect}
             />
           </div>
         </div>
