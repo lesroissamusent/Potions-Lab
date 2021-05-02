@@ -8,7 +8,13 @@ import { getPayloadFromToken, getTokenFromLocalStorage } from '../auth/auth'
 
 
 
-const PotionForm = ({ handleChange, handleSubmit, formData, handleIngredientsSelect, handleInstructionsSelect, handleImageSelect, ingredientsOptions, instructionsOptions, imageOptions }) => {
+const PotionForm = ({ handleChange, handleSubmit, formData, handleIngredientsSelect, handleInstructionsSelect, handleImageSelect, ingredientsOptions, instructionsOptions, popIngredients, popInstructions }) => {
+
+
+  const imageOptions = [
+    { value: '../assets/Garrotting.png', label: 'medicine' }, 
+    { value: 'potion2.png', label: 'physical effect' }
+  ]
 
   return (
     <div>
@@ -33,8 +39,7 @@ const PotionForm = ({ handleChange, handleSubmit, formData, handleIngredientsSel
               // defaultValue={imageOptions[0]}
               options={imageOptions}
               components={makeAnimated()}
-              onChange={handleImageSelect}
-            />
+              onChange={(selected) => handleImageSelect(selected, 'image')}            />
           </div>
         </div>
         <div className="field">
@@ -42,6 +47,7 @@ const PotionForm = ({ handleChange, handleSubmit, formData, handleIngredientsSel
           <div className="control">
             <Select
               name="ingredients"
+              defaultValue={popIngredients}
               options={ingredientsOptions}
               components={makeAnimated()}
               onChange={(selected) => handleIngredientsSelect(selected, 'ingredients')}
@@ -54,6 +60,7 @@ const PotionForm = ({ handleChange, handleSubmit, formData, handleIngredientsSel
           <div className="control">
             <Select
               name="instructions"
+              defaultValue={popInstructions}
               options={instructionsOptions}
               components={makeAnimated()}
               onChange={(selected) => handleInstructionsSelect(selected, 'instructions')}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 
 import { getPayloadFromToken, getTokenFromLocalStorage } from '../auth/auth'
@@ -11,6 +11,7 @@ const MakePotion = () => {
   const [ingredients, setIngredients] = useState(null)
   const [instructions, setInstructions] = useState(null)
   const userID = getPayloadFromToken().sub 
+  const history = useHistory()
   
   const [formData, setFormData] = useState({
     name: '',
@@ -43,8 +44,10 @@ const MakePotion = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     window.alert(`Submitting ${JSON.stringify(formData, null, 2)}`)
-    await axios.post('/api/potions/', formData, { headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` } } )
-    // history.push(`/profile/${userID}`)
+    const response = await axios.post('/api/potions/', formData, { headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` } } )
+    const potionID = response.data.id
+    console.log('potionID', potionID)
+    history.push(`/potions/${potionID}`)
   }
 
   if (!instructions || !ingredients) return null 
@@ -64,9 +67,14 @@ const MakePotion = () => {
     setFormData({ ...formData, [name]: [...values] })
   }
 
+  // const handleImageSelect = (selected, name) => {
+  //   const values = selected ? selected.map(item => item.value) : []
+  //   setFormData({ ...formData, [name]: [...values] })
+  // }
+
   const handleImageSelect = (selected, name) => {
-    const values = selected ? selected.map(item => item.value) : []
-    setFormData({ ...formData, [name]: [...values] })
+    const selection = selected.value
+    setFormData({ ...formData, [name]: selection })
   }
 
   const handleChange = event => {
@@ -84,10 +92,10 @@ const MakePotion = () => {
     return { value: id, label: description }
   })
 
-  const imageOptions = [
-    { value: 'potion1.png', label: 'medicine' }, 
-    { value: 'potion2.png', label: 'physical effect' }
-  ]
+  // const imageOptions = [
+  //   { value: '../assets/Garrotting.png', label: 'medicine' }, 
+  //   { value: 'potion2.png', label: 'physical effect' }
+  // ]
 
   return (
     <div className="container">
@@ -101,7 +109,7 @@ const MakePotion = () => {
           handleImageSelect={handleImageSelect}
           ingredientsOptions={ingredientsOptions}
           instructionsOptions={instructionsOptions}
-          imageOptions={imageOptions}
+          // imageOptions={imageOptions}
         />
       </div>
     </div>

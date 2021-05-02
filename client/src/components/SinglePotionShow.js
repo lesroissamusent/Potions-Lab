@@ -12,13 +12,13 @@ const SinglePotionShow = () => { //id, image  { ingredients }
   const userID = getPayloadFromToken().sub 
 
   const [potion, setPotion] = useState(null)
-
+  const [isModalActive, setIsModalActive] = useState(false)
 
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get(`/api/potions/${params.id}`)
       setPotion(response.data)
-      console.log('Single RESPONSE.DATA', response.data)
+      console.log('Single potion RESPONSE.DATA', response.data)
     }
     getData()
   }, [])
@@ -30,6 +30,10 @@ const SinglePotionShow = () => { //id, image  { ingredients }
       },
     })
     history.push('/potions')
+  }
+
+  const triggerModal = () => {
+    setIsModalActive(!isModalActive)
   }
 
 
@@ -44,7 +48,7 @@ const SinglePotionShow = () => { //id, image  { ingredients }
 
 
 
-  const { image, ingredients, instructions, name } = potion //, id, owner
+  const { image, ingredients, instructions, name, id } = potion //, owner
 
 
   return (
@@ -75,10 +79,20 @@ const SinglePotionShow = () => { //id, image  { ingredients }
         </div>
         <div className="columns is-multiline">
           { getPayloadFromToken(userID) &&
-                  <div className="buttons">
-                    <Link to={'/editpotion'} className="button">Edit</Link>
-                    <button onClick={handleDelete} className="button">Delete</button>
-                  </div>
+          <>
+            <div className="buttons">
+              <Link to={`/potions/${id}/editpotion`} className="button">Edit</Link>
+              <button onClick={triggerModal} className="button">Delete</button>
+            </div>
+            <div className= {isModalActive ? 'modal is-active' : 'modal' }>
+              <div className="modal-background"></div>
+              <div className="modal-content">
+                <p>Are you sure??</p>
+                <button onClick={handleDelete} className="button">Delete</button>
+              </div>
+              <button onClick={triggerModal} className="modal-close is-large" aria-label="close"></button>
+            </div>
+          </>
           }
         </div>
       </div>

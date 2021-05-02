@@ -32,7 +32,7 @@ const App = () => {
           <Route exact path="/potions">
             <PotionIndex />
           </Route>
-          <Route path="/potions/:id">
+          <Route exact path="/potions/:id">
             <SinglePotionShow />
           </Route>
           {/* <Route path="/profileform">
@@ -41,7 +41,7 @@ const App = () => {
           <Route path="/makepotion">
             <MakePotion />
           </Route>
-          <Route path="/editpotion">
+          <Route path="/potions/:id/editpotion">
             <EditPotion />
           </Route>
         </Switch>

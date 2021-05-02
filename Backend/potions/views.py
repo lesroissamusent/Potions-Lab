@@ -44,7 +44,7 @@ class PotionDetailView(APIView):
 
     def put(self, request, pk):
         potion_to_edit = self.get_potion(pk=pk)
-        updated_potion = PopulatedPotionSerializer(potion_to_edit, data=request.data)
+        updated_potion = PotionSerializer(potion_to_edit, data=request.data)
         if updated_potion.is_valid():
             updated_potion.save()
             return Response(updated_potion.data, status=status.HTTP_202_ACCEPTED)
