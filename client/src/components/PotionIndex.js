@@ -27,21 +27,33 @@ const PotionIndex = () => {
   }, [])
 
   const filterPotions = (selected) => {
+    /** 
+    * * the ingredient 'View All' has a value of 'all' which does not appear
+    * * in the ingredients. this makes the filteredArray.length 0 which runs 
+    * * the conditional render in the return to 
+    * * display potions instead of filtered potions
+    */
+    setFilteredPotions(potions)
     console.log('selected.value',selected.value)
+    const ingredientToFilter = selected.value
     const filteredArray = potions.filter(potion => {
-      // return potion.ingredients === event.target.value
-      console.log('potion.ingredients', potion.ingredients)
+      /** 
+       * ? potions.ingredients["id"] returns an array of ingredients objects for the potion
+       * ? id: 12, name: "Rat Tails"
+       * ? if ingredients array INCLUDES rat tails [i].id === 12
+       * ? 
+       *  */ 
+
+      const something = potion.ingredients.filter(item => item.id === ingredientToFilter)
+      console.log('something', something)
+
+      return something.length > 0
+
     })
-    // setFilteredPotions(filteredArray)
+    console.log('filtered array', filteredArray)
+
+    setFilteredPotions(filteredArray)
   }
-
-  
-
-  // const handleImageSelect = (selected, name) => {
-  //     const selection = selected.value
-  //     setFormData({ ...formData, [name]: selection })
-  //   }
-
 
   useEffect(() => {
     const getIngredients = async () => {
@@ -53,20 +65,14 @@ const PotionIndex = () => {
     console.log('get ingredients ->', ingredients)
   }, [])
 
-  //   const handleIngredientsSelect = (selected, name) => {
-  //   const values = selected ? selected.map(item => item.value) : []
-  //   setFormData({ ...formData, [name]: [...values] })
-  //   console.log('formdata >>>', formData)
-  // }
-
-
-
   if ( !potions || !ingredients ) return null
 
   const ingredientsOptions = ingredients.map(ingredient => {
     const { id, name } = ingredient
     return { value: id, label: name }
   })
+
+  ingredientsOptions.unshift({ value: 'all', label: 'View All' })
 
 
   return (
@@ -81,16 +87,24 @@ const PotionIndex = () => {
               options={ingredientsOptions}
               components={makeAnimated()}
               onChange={(selected) => filterPotions(selected, 'ingredients')}
+              isMulti
             />
           </div>
         </div>  
       </form>
       <div className="section">
         <div className="container">
-          { 
-            potions &&
+          { //? onclick of filter button, change potions to filteredPotions
+            filteredPotions.length === 0 ?
               <div className="columns is-multiline">
                 { potions.map((potion, i) => (
+                  <SinglePotion key={i} {...potion} />
+                ))
+                }
+              </div>
+              :
+              <div className="columns is-multiline">
+                { filteredPotions.map((potion, i) => (
                   <SinglePotion key={i} {...potion} />
                 ))
                 }
