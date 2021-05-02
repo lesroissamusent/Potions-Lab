@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams, useHistory, Link } from 'react-router-dom' //
-import { getTokenFromLocalStorage, userIsOwner } from '../auth/auth'
+import { getPayloadFromToken, getTokenFromLocalStorage } from '../auth/auth'
 
 
 
@@ -9,6 +9,7 @@ import { getTokenFromLocalStorage, userIsOwner } from '../auth/auth'
 const SinglePotionShow = () => { //id, image  { ingredients }
   const params = useParams()
   const history = useHistory()
+  const userID = getPayloadFromToken().sub 
 
   const [potion, setPotion] = useState(null)
 
@@ -23,12 +24,12 @@ const SinglePotionShow = () => { //id, image  { ingredients }
   }, [])
 
   const handleDelete = async () => {
-    await axios.delete(`http://ga-cheesebored.herokuapp.com/cheeses/${params.id}`, {
+    await axios.delete(`/api/potions/${params.id}`, {
       headers: {
         Authorization: `Bearer ${getTokenFromLocalStorage()}`,
       },
     })
-    history.push('/cheeses')
+    history.push('/potions')
   }
 
 
@@ -43,7 +44,7 @@ const SinglePotionShow = () => { //id, image  { ingredients }
 
 
 
-  const { image, ingredients, instructions, name, owner, id } = potion //, id
+  const { image, ingredients, instructions, name } = potion //, id, owner
 
 
   return (
@@ -72,12 +73,14 @@ const SinglePotionShow = () => { //id, image  { ingredients }
             </ol>
           })} 
         </div>
-        { userIsOwner(owner.id) &&
-                <div className="buttons">
-                  <Link to={`/potions/${id}/edit`} className="button is-warning">Edit</Link>
-                  <button onClick={handleDelete} className="button is-danger">Delete</button>
-                </div>
-        }
+        <div className="columns is-multiline">
+          { getPayloadFromToken(userID) &&
+                  <div className="buttons">
+                    <Link to={'/editpotion'} className="button">Edit</Link>
+                    <button onClick={handleDelete} className="button">Delete</button>
+                  </div>
+          }
+        </div>
       </div>
     </div>
 

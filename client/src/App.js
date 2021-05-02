@@ -9,7 +9,9 @@ import SinglePotionShow from './components/SinglePotionShow'
 import Login from './auth/login'
 import Register from './auth/register'
 // import ProfileForm from './components/ProfileForm'
-import PotionForm from './components/PotionForm'
+import EditPotion from './components/EditPotion'
+import MakePotion from './components/MakePotion'
+
 
 
 const App = () => {
@@ -37,7 +39,10 @@ const App = () => {
             <ProfileForm />
           </Route> */}
           <Route path="/makepotion">
-            <PotionForm />
+            <MakePotion />
+          </Route>
+          <Route path="/editpotion">
+            <EditPotion />
           </Route>
         </Switch>
         {/* <Footer /> */}
