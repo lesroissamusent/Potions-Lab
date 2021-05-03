@@ -16,7 +16,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-start">
         <Link to="/lab" className="logo-image">
-          <img src="../../assets/nav-logo.png" alt={`${name}`} />
+          <img src="../../assets/nav-logo.png" alt={`${name}`} className="logo-image"/>
         </Link>
         <Link to="/potions" className="navbar-item">Potions</Link>
 

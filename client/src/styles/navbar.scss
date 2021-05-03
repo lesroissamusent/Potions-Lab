@@ -14,34 +14,6 @@ $brand-color: #33A58B;
   box-shadow: 0px 0px 20px #1A4289;
 }
 
-// .navbar{
-// a:link {
-//   text-decoration: none;
-// }
-
-// a:visited {
-//   text-decoration: none;
-// }
-
-// a:hover {
-//   text-decoration: underline;
-// }
-
-// a:active {
-//   text-decoration: underline;
-// }
-// }
-
-// .second-logo-color {
-//   fill: #0B884B;
-// }
-
-// .custom-nav {
-//   background-color: transparent;
-//   border-bottom: 1px solid #000;
-//   box-shadow: 0px 0px 15px #00c267;
-// }
-
 .navbar-item { 
   font-size: 35px;
   color: white !important;
@@ -64,9 +36,9 @@ $brand-color: #33A58B;
 
 }
 
-.logo-image{
+img.logo-image{
     width: 46px;
-    height: 46px;
+    height: 46px !important;
     border-radius: 50%;
     overflow: hidden;
     margin-top: 5px;
