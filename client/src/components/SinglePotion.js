@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../styles/singlePotion.scss'
+
 
 const SinglePotion = ({ id, name, image, ingredients }) => { 
   // console.log('ingredients', ingredients)

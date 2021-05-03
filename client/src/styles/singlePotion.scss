@@ -1,0 +1,72 @@
+@import "~bulma/bulma.sass";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=PT+Serif&family=Reenie+Beanie&display=swap');
+$brand-color: #33A58B;
+
+body {
+  color: white;
+
+}
+div.title {
+  color: white;
+  font-family: 'Reenie Beanie', cursive;
+  text-align: center;
+  font-size: 100px !important;
+  margin: 30px 0px 0px 0px !important;
+  padding: 0;
+}
+
+h3.card-header{
+  color: white;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 20px;
+
+}
+
+h4 {
+  color: white;
+}
+
+li {
+  color: white;
+}
+
+li.marker {
+  color: black;
+}
+
+div.columns.potion {
+  margin: 10px 40px;
+}
+
+span.username {
+  font-size: 30px;
+
+}
+
+div.columns {
+  margin: 0;
+}
+
+div.buttons {
+  margin-left: 55px;
+ 
+
+}
+
+button.single {
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+a.button.single {
+  font-family: 'Cinzel Decorative', cursive;
+  background-color: $brand-color;
+  border-color: #1A4289;
+}
+
+.modal {
+  color: white;
+  text-align: center;
+  font-size: 80px;
+
+}

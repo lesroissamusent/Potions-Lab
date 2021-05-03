@@ -1,13 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom' 
+import { getPayloadFromToken } from '../auth/auth'
+
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
 import axios from 'axios'
 import SinglePotion from './SinglePotion'
-import '../styles/login.scss'
+import '../styles/main.scss'
 import '../styles/potions.scss'
-
 
 
 const PotionIndex = () => {
@@ -15,7 +16,8 @@ const PotionIndex = () => {
   const [potions, setPotions] = useState(null)
   const [filteredPotions, setFilteredPotions] = useState([])
   const [ingredients, setIngredients] = useState(null)
-  // const params = useParams()
+
+  const userID = getPayloadFromToken().sub 
 
   useEffect(() => {
     const getData = async () => {
@@ -33,8 +35,24 @@ const PotionIndex = () => {
     * * the conditional render in the return to 
     * * display potions instead of filtered potions
     */
-    setFilteredPotions(potions)
-    console.log('selected.value',selected.value)
+    // const values = selected ? selected.map(item => item.value) : []
+    // console.log('values', values)
+    // setFilteredPotions(potions)
+    // const multipleFilters = potions.filter(potion => {
+    //   /**
+    //    * ? filter the potions based on a n array of numbers instead of 
+    //    * ? just one number
+    //    */
+
+    //   let filteredPotionIngredients = []
+    //   for (let i = 0; i < values.length; i++) {
+    //     filteredPotionIngredients = potion.ingredients.filter(ingredient => ingredient.id === values[i]) 
+    //   }
+    //   return filteredPotionIngredients.length > 0 
+    // })
+    // console.log('whatever you want', multipleFilters)
+
+
     const ingredientToFilter = selected.value
     const filteredArray = potions.filter(potion => {
       /** 
@@ -42,16 +60,14 @@ const PotionIndex = () => {
        * ? id: 12, name: "Rat Tails"
        * ? if ingredients array INCLUDES rat tails [i].id === 12
        * ? 
-       *  */ 
+       **/ 
 
-      const something = potion.ingredients.filter(item => item.id === ingredientToFilter)
-      console.log('something', something)
+      const filteredPotionIngredients = potion.ingredients.filter(item => item.id === ingredientToFilter)
 
-      return something.length > 0
+      return filteredPotionIngredients.length > 0
 
     })
-    console.log('filtered array', filteredArray)
-
+    // console.log('filtered array', filteredArray)
     setFilteredPotions(filteredArray)
   }
 
@@ -59,13 +75,27 @@ const PotionIndex = () => {
     const getIngredients = async () => {
       const response = await axios.get('/api/ingredients/')
       setIngredients(response.data)
-      // setFormData(response.data)
     }
     getIngredients()
     console.log('get ingredients ->', ingredients)
   }, [])
 
-  if ( !potions || !ingredients ) return null
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      color: state.isSelected ? '#33A58B' : 'black',
+      background: 'white',
+      padding: 20,
+    }),
+    singleValue: (provided, state) => {
+      const opacity = state.isDisabled ? 0.5 : 1
+      const transition = 'opacity 300ms'
+  
+      return { ...provided, opacity, transition }
+    },
+  }
+
+  if ( !potions || !ingredients) return null
 
   const ingredientsOptions = ingredients.map(ingredient => {
     const { id, name } = ingredient
@@ -74,11 +104,10 @@ const PotionIndex = () => {
 
   ingredientsOptions.unshift({ value: 'all', label: 'View All' })
 
-
   return (
     <>
       <h1 className="potions-page-title">Potions</h1>
-      <form>
+      <form className="form is-centered">
         <div className="field">
           <label className="label">Ingredients:</label>
           <div className="control">
@@ -87,30 +116,37 @@ const PotionIndex = () => {
               options={ingredientsOptions}
               components={makeAnimated()}
               onChange={(selected) => filterPotions(selected, 'ingredients')}
-              isMulti
+              styles={customStyles}
             />
           </div>
         </div>  
       </form>
-      <div className="section">
-        <div className="container">
-          { //? onclick of filter button, change potions to filteredPotions
-            filteredPotions.length === 0 ?
-              <div className="columns is-multiline">
-                { potions.map((potion, i) => (
-                  <SinglePotion key={i} {...potion} />
-                ))
-                }
+      <div className="columns is-multiline">
+        { getPayloadFromToken(userID) &&
+            <>
+              <div className="create-button">
+                <Link to={'/makepotion'} className="button">Create a Potion</Link>
               </div>
-              :
-              <div className="columns is-multiline">
-                { filteredPotions.map((potion, i) => (
-                  <SinglePotion key={i} {...potion} />
-                ))
-                }
-              </div>
-          }
-        </div>
+            </>
+        }
+      </div>
+      <div className="container">
+        { //? onclick of filter button, change potions to filteredPotions
+          filteredPotions.length === 0 ?
+            <div className="columns is-multiline">
+              { potions.map((potion, i) => (
+                <SinglePotion key={i} {...potion} />
+              ))
+              }
+            </div>
+            :
+            <div className="columns is-multiline">
+              { filteredPotions.map((potion, i) => (
+                <SinglePotion key={i} {...potion} />
+              ))
+              }
+            </div>
+        }
       </div>
     </>
   )

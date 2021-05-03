@@ -4,9 +4,11 @@ $brand-color: #33A58B;
 
 
 body {
-  background: black;
-  min-height: 300vh;
   font-family: 'Cinzel Decorative', cursive !important;
+  margin: 0px;
+  min-height: 100%;
+  width: 100%;
+  color: black !important;
 }
 .potions-page-title {
   color: white;
@@ -16,6 +18,23 @@ body {
   max-height: 15vh;
 
 }
+
+form.form {
+  margin: 0 auto;
+}
+
+.create-button {
+  margin: 20px auto;
+}
+
+a.button:hover {
+  color: $brand-color !important;
+  background-color: transparent !important;
+  font-size: 20px;
+  transition-duration: 1s;
+}
+
+
 .columns.is-multiline {
   margin: 0;
 }

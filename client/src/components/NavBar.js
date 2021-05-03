@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     window.localStorage.removeItem('token')
-    history.push('/')
+    history.push('/potions')
   }
   return (
     <nav className="navbar">
@@ -19,10 +19,6 @@ const Navbar = () => {
           <img src="../../assets/nav-logo.png" alt={`${name}`} />
         </Link>
         <Link to="/potions" className="navbar-item">Potions</Link>
-
-        { userIsAuthenticated() &&
-          <Link to="/profile" className="navbar-item">Profile</Link>
-        }
 
       </div>
       <div className="navbar-end">

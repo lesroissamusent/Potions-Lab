@@ -25,7 +25,6 @@ const MakePotion = () => {
     const getIngredients = async () => {
       const response = await axios.get('/api/ingredients/')
       setIngredients(response.data)
-      // setFormData(response.data)
     }
     getIngredients()
     console.log('get ingredients ->', ingredients)
@@ -35,7 +34,6 @@ const MakePotion = () => {
     const getInstructions = async () => {
       const response = await axios.get('/api/instructions/')
       setInstructions(response.data)
-      // setFormData(response.data)
     }
     getInstructions()
     console.log('get instructions ->', instructions)
@@ -43,7 +41,6 @@ const MakePotion = () => {
   
   const handleSubmit = async (event) => {
     event.preventDefault()
-    window.alert(`Submitting ${JSON.stringify(formData, null, 2)}`)
     const response = await axios.post('/api/potions/', formData, { headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` } } )
     const potionID = response.data.id
     console.log('potionID', potionID)
@@ -67,11 +64,6 @@ const MakePotion = () => {
     setFormData({ ...formData, [name]: [...values] })
   }
 
-  // const handleImageSelect = (selected, name) => {
-  //   const values = selected ? selected.map(item => item.value) : []
-  //   setFormData({ ...formData, [name]: [...values] })
-  // }
-
   const handleImageSelect = (selected, name) => {
     const selection = selected.value
     setFormData({ ...formData, [name]: selection })
@@ -92,10 +84,6 @@ const MakePotion = () => {
     return { value: id, label: description }
   })
 
-  // const imageOptions = [
-  //   { value: '../assets/Garrotting.png', label: 'medicine' }, 
-  //   { value: 'potion2.png', label: 'physical effect' }
-  // ]
 
   return (
     <div className="container">

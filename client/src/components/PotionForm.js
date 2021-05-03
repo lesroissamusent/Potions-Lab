@@ -1,19 +1,36 @@
 /*eslint-disable no-unused-vars*/
 
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated'
-import { getPayloadFromToken, getTokenFromLocalStorage } from '../auth/auth'
 
+import '../styles/potionForm.scss'
 
 
 const PotionForm = ({ handleChange, handleSubmit, formData, handleIngredientsSelect, handleInstructionsSelect, handleImageSelect, ingredientsOptions, instructionsOptions, popIngredients, popInstructions }) => {
 
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      color: state.isSelected ? '#33A58B' : 'black',
+      background: 'white',
+      padding: 20,
+    }),
+    singleValue: (provided, state) => {
+      const opacity = state.isDisabled ? 0.5 : 1
+      const transition = 'opacity 300ms'
+  
+      return { ...provided, opacity, transition }
+    },
+  }
 
   const imageOptions = [
-    { value: '../assets/Garrotting.png', label: 'medicine' }, 
-    { value: 'potion2.png', label: 'physical effect' }
+    { value: '../assets/Garrotting.png', label: 'Medicinal' }, 
+    { value: '../assets/polyjuice.png', label: 'Transfigurative' },
+    { value: '../assets/Pepperup.png', label: 'Poisonous' }, 
+    { value: '../assets/Regerminating.png', label: 'Herbological' }, 
+    { value: '../assets/Scintillation.png', label: 'Mystery' }, 
+    { value: '../assets/Wiggenweld.png', label: 'Dark Arts' } 
   ]
 
   return (
@@ -32,14 +49,15 @@ const PotionForm = ({ handleChange, handleSubmit, formData, handleIngredientsSel
           </div>
         </div>
         <div className="field">
-          <label className="label">Image:</label>
+          <label className="label">Potion Type:</label>
           <div className="control">
             <Select
               name="image"
-              // defaultValue={imageOptions[0]}
               options={imageOptions}
               components={makeAnimated()}
-              onChange={(selected) => handleImageSelect(selected, 'image')}            />
+              onChange={(selected) => handleImageSelect(selected, 'image')}
+              styles={customStyles}
+            />
           </div>
         </div>
         <div className="field">
@@ -52,6 +70,7 @@ const PotionForm = ({ handleChange, handleSubmit, formData, handleIngredientsSel
               components={makeAnimated()}
               onChange={(selected) => handleIngredientsSelect(selected, 'ingredients')}
               isMulti
+              styles={customStyles}
             />
           </div>
         </div>
@@ -65,11 +84,12 @@ const PotionForm = ({ handleChange, handleSubmit, formData, handleIngredientsSel
               components={makeAnimated()}
               onChange={(selected) => handleInstructionsSelect(selected, 'instructions')}
               isMulti
+              styles={customStyles}
             />
           </div>
         </div>
         <div className="field">
-          <button className="button is-fullwidth is-dark" type="submit">Submit</button>
+          <button className="button submit is-fullwidth" type="submit">Submit</button>
         </div>
       </form>
     </div>
