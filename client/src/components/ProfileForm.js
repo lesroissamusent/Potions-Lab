@@ -7,6 +7,7 @@ import axios from 'axios'
 import { getTokenFromLocalStorage, getPayloadFromToken } from '../auth/auth'
 
 
+//! Planned a Profile page but ultimately decided against it. 
 
 const ProfileForm = () => {
   const userID = getPayloadFromToken().sub 

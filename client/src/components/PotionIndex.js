@@ -29,11 +29,13 @@ const PotionIndex = () => {
   }, [])
 
   const filterPotions = (selected) => {
-    /** 
-    * * the ingredient 'View All' has a value of 'all' which does not appear
-    * * in the ingredients. this makes the filteredArray.length 0 which runs 
-    * * the conditional render in the return to 
-    * * display potions instead of filtered potions
+    
+    //* Tried to filter by multiple options but could not get it to work.
+    /*
+    the ingredient 'View All' has a value of 'all' which does not appear
+    in the ingredients. this makes the filteredArray.length 0 which runs 
+    the conditional render in the return to 
+    display potions instead of filtered potions
     */
     // const values = selected ? selected.map(item => item.value) : []
     // console.log('values', values)
@@ -55,15 +57,8 @@ const PotionIndex = () => {
 
     const ingredientToFilter = selected.value
     const filteredArray = potions.filter(potion => {
-      /** 
-       * ? potions.ingredients["id"] returns an array of ingredients objects for the potion
-       * ? id: 12, name: "Rat Tails"
-       * ? if ingredients array INCLUDES rat tails [i].id === 12
-       * ? 
-       **/ 
-
+      
       const filteredPotionIngredients = potion.ingredients.filter(item => item.id === ingredientToFilter)
-
       return filteredPotionIngredients.length > 0
 
     })

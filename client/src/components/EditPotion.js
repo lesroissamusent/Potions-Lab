@@ -13,8 +13,6 @@ const EditPotion = () => {
   const [instructions, setInstructions] = useState(null)
   const [popInstructions, setPopInstructions] = useState(null)
 
-  // const [potion, setPotion] = useState(null)
-
   const userID = getPayloadFromToken().sub 
   const params = useParams()
   console.log('PARAMS.ID', params.id)
@@ -32,7 +30,6 @@ const EditPotion = () => {
   useEffect(() => {
     const getPotion = async () => {
       const response = await axios.get(`/api/potions/${params.id}`)
-      // setFormData(response.data)
       const ingredientsMap = response.data.ingredients.map(ingredient => {
         const { id, name } = ingredient
         return { value: id, label: name }
@@ -44,6 +41,7 @@ const EditPotion = () => {
       })
       console.log('response.data', response.data)
 
+      // could not populate the form fields above as the data had not been requested yet.
       setPopInstructions(instructionsMap)
       const { data } = response
       const newFormData = {
@@ -54,7 +52,7 @@ const EditPotion = () => {
         instructions: instructionsMap.map(item => item.value),
       }
       setFormData(newFormData)
-      console.log('ingredients.map', ingredientsMap)
+      // console.log('ingredients.map', ingredientsMap)
     }
     getPotion()
   }, [])
@@ -63,17 +61,15 @@ const EditPotion = () => {
     const getIngredients = async () => {
       const response = await axios.get('/api/ingredients/')
       setIngredients(response.data)
-      // setFormData(response.data)
     }
     getIngredients()
-    console.log('get ingredients ->', ingredients)
+    // console.log('get ingredients ->', ingredients)
   }, [])
 
   useEffect(() => {
     const getInstructions = async () => {
       const response = await axios.get('/api/instructions/')
       setInstructions(response.data)
-      // setFormData(response.data)
     }
     getInstructions()
     console.log('get instructions ->', instructions)
@@ -81,21 +77,21 @@ const EditPotion = () => {
   
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log(`Submitting ${JSON.stringify(formData, null, 2)}`)
+    // console.log(`Submitting ${JSON.stringify(formData, null, 2)}`)
     await axios.put(`/api/potions/${params.id}/`, formData, { headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` } } )
     history.push(`/potions/${params.id}`)
   }
 
-  if (!instructions || !ingredients || !popIngredients) return null // !potion || 
-  console.log('instructions', instructions)
-  console.log('ingredients', ingredients)
-  console.log('form data', formData)
+  if (!instructions || !ingredients || !popIngredients) return null 
+  // console.log('instructions', instructions)
+  // console.log('ingredients', ingredients)
+  // console.log('form data', formData)
 
 
   const handleIngredientsSelect = (selected, name) => {
     const values = selected ? selected.map(item => item.value) : []
     setFormData({ ...formData, [name]: [...values] })
-    console.log('formdata >>>', formData)
+    // console.log('formdata >>>', formData)
   }
 
   const handleInstructionsSelect = (selected, name) => {
@@ -137,7 +133,6 @@ const EditPotion = () => {
           handleImageSelect={handleImageSelect}
           ingredientsOptions={ingredientsOptions}
           instructionsOptions={instructionsOptions}
-          // imageOptions={imageOptions}
         />
       </div>
     </div>
