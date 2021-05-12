@@ -69,6 +69,7 @@ Git/GitHub
 
 The idea for this project came from the research I had done for a different project, where I had wanted to use a Harry Potter API and couldn't find one with enough data. I knew I wanted to do something with Harry Potter and I also wanted there to be a game element to it. My idea was to build an app that mimics a potions lab where familiar harry potter ingredients can be used alongside brewing directions to create custom potions, with a 'potions cupboard' page that would have pre-made, real Harry Potter potions to get inspiration from. 
 
+**WireFrame and Plan for Sign-off (Including MVP and Bonus Features)**
 <img width="968" alt="Potions-wireframe" src="https://user-images.githubusercontent.com/74684118/117984901-270e9000-b330-11eb-8e6d-ecd2d63bd680.png">
 
 ### Project Elements
