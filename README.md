@@ -313,7 +313,7 @@ useEffect(() => {
 * It was hugely satusfying to create a full-stack application on a solo project. 
 
 ## Bugs
-* The sign-in and sign-out links on the navbar don't show until the page is refreshed
+* The sign-in and sign-out links on the navbar don't show until the page is refreshed.
 * If the user clicks on one of the potions on the potion index page, they are sent to the individual potion show page. This works while the user is authenticated but should show an error message when an unathenticated user clicks. Currently the user is sent to a blank page. 
 
 ## Future Features
